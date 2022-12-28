@@ -1,0 +1,59 @@
+$bg-color: yellowgreen;
+$text-font-size:15px;
+
+body{
+    background-color: $bg-color;
+}
+
+nav{
+    ul{
+        li{
+            background-color: burlywood;
+            padding: 10px;
+            margin: 10px;
+            a{
+                color:red;
+                font-size: $text-font-size +10;
+                &hover{
+                    background-color: azure;
+                    color: $hover-text-color;
+                }
+            }
+        }
+    }
+}
+
+@mixin border-radius{
+    border-radius: 2px*5;
+    background-color: antiquewhite;
+    color: rgb(239, 159, 11);
+}
+
+.btn{
+    padding: 10px;
+    color: antiquewhite;
+    outline: none;
+    background-color: transparent;
+}
+
+.btn-ozel{
+    @extend .btn;
+    border:2px green solid;
+
+}
+
+.btn-ozel2{
+    @extend .btn;
+    border: 2px red solid;
+    @include border-radius(5px); 
+}
+
+$counter: 4;
+@for $i from 1 through 3 {i
+    .counter#{$i}{
+        border-radius: 4px;
+    }
+
+}
+
+
